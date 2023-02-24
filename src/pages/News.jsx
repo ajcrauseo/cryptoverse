@@ -3,23 +3,16 @@ import { Select, Typography, Row, Col, Card } from 'antd';
 import moment from 'moment';
 
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi';
+import { Loader } from '../components';
 
 const { Text, Title } = Typography;
 const { Option } = Select;
-
-const example = {
-  date: 'Fri, 17 Feb 2023 22:32:17 +0000',
-  description: 'It wasn’t immediately clear what prompted the rally.',
-  title:
-    'Filecoin’s FIL Token Jumps More Than 30%, Sparking Interest in Virtual Machine Launch ',
-  url: 'https://www.coindesk.com/business/2023/02/17/filecoins-fil-token-jumps-more-than-30-sparking-interest-in-virtual-machine-launch/?utm_medium=referral&utm_source=rss&utm_campaign=headlines',
-};
 
 const News = ({ simplified }) => {
   // const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
   const { data: cryptoNews } = useGetCryptoNewsQuery();
 
-  if (!cryptoNews) return 'Loading...';
+  if (!cryptoNews) return <Loader />;
 
   return (
     <Row gutter={[24, 24]}>

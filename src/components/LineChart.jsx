@@ -11,6 +11,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { Loader } from './';
 
 ChartJS.register(
   CategoryScale,
@@ -33,9 +34,7 @@ const LineChart = ({
   const coinPrice = [];
   const coinTimestamp = [];
 
-  if (isFetchingHistory) return 'Loading...';
-
-  console.log(coinHistory);
+  if (isFetchingHistory) return <Loader />;
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
     coinPrice.push(coinHistory?.data?.history[i].price);
@@ -43,7 +42,9 @@ const LineChart = ({
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
     coinTimestamp.push(
-      new Date(coinHistory?.data?.history[i].timestamp * 1000).toLocaleDateString(),
+      new Date(
+        coinHistory?.data?.history[i].timestamp * 1000,
+      ).toLocaleDateString(),
     );
   }
   const data = {

@@ -52,7 +52,7 @@ a:hover{
   width: 100%;
 }
 .logo{
-  margin:0 0 0 15px;
+  margin: 12px 10px 8px 10px;
 }
 .logo a{
  color: white;
@@ -61,7 +61,7 @@ a:hover{
   display: none !important;
   position: absolute !important;
   right: 10px !important;
-  top: 25px !important;
+  top: 35px !important;
   font-size: 1.2rem !important;
   background-color: var(--bgSecondary) !important;
   border: none !important;
@@ -92,7 +92,7 @@ a:hover{
   }
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:768px){
   .app{
       flex-direction: column;
       overflow: hidden;
@@ -118,7 +118,9 @@ a:hover{
   }
 
   .menu-control-container{
-      display: block !important;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
   }
 
   .ant-menu{
