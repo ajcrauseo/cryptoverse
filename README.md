@@ -1,7 +1,13 @@
 # Cryptoverse - Explore the World of Cryptocurrency
 
-![Cryptoverse](https://i.ibb.co/8gh5Jc8/image.png)
+Project built with React, Redux, Ant Design and Rapid API
 
-## Info
+### Install
 
-Project built with React, Redux, Ant Design and Rapid API 
+`git clone <repository>`
+
+`npm install`
+
+### Run in your Browser
+
+`npm run dev`
